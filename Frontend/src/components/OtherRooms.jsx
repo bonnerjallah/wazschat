@@ -4,6 +4,8 @@ import axios from "axios"
 import Cookies from "js-cookie"
 import socket from "../socket"
 
+const frontendURL = import.meta.env.VITE_REACT_APP_FRONTEND_URL
+
 import {useNavigate} from "react-router-dom"
 
 import otherroomstyle from "../styles/otherroomstyle.module.css"
@@ -30,7 +32,7 @@ const OtherRooms = () => {
             if(!user) return;
             try {
                 const token = Cookies.get("token")
-                const response = await axios.get("http://localhost:3001/getappuser", {
+                const response = await axios.get(`${frontendURL}/getappuser`, {
                     headers: {"Content-Type": "application/json", "Authorization": `Bearer ${token}`}
                 })
 

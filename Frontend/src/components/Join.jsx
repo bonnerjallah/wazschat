@@ -6,8 +6,7 @@ import { useAuth } from "./AuthContex";
 import axios from "axios"
 import Cookies from "js-cookie"
 
-import InRoom from "./InRoom";
-
+const frontendURL = import.meta.env.VITE_REACT_APP_FRONTEND_URL
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faGear } from "@fortawesome/free-solid-svg-icons";
@@ -46,7 +45,7 @@ const Join = () => {
 
             try {
                 const token = Cookies.get("token")
-                const response = await axios.get("http://localhost:3001/getappuser", {
+                const response = await axios.get(`${frontendURL}/getappuser`, {
                     headers: {"Content-Type": "application/json", "Authorization": `Bearer ${token}`}
                 })
                 console.log(response.data)
@@ -94,7 +93,7 @@ const Join = () => {
 
     const handleLogOut = async () => {
         try {
-            const response = await axios.post("http://localhost:3001/logout", {}, {
+            const response = await axios.post(`${frontendURL}/logout`, {}, {
                 withCredentials: true
             })
 
@@ -159,7 +158,7 @@ const Join = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:3001/updateUserData", formData, {
+            const response = await axios.post(`${frontendURL}/updateUserData`, formData, {
                 headers: { "Content-Type": "multipart/form-data" }
             });
             
@@ -190,7 +189,7 @@ const Join = () => {
                 <div className={joinstyle.profilePicImageWrapper}>
                     {userData && userData.user && userData.user.profilePic ? (
                         <img
-                            src={`http://localhost:3001/profilePics/${userData.user.profilePic}`}
+                            src={`${frontendURL}/profilePics/${userData.user.profilePic}`}
                             alt={`${userData.user.username.charAt(0).toUpperCase()}`}
                         />
                     ) : (

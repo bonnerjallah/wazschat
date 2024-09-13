@@ -7,10 +7,11 @@ import Cookies from "js-cookie"
 
 import homestyle from "../styles/homestyle.module.css"
 
+const frontendURL = import.meta.env.VITE_REACT_APP_FRONTEND_URL
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
-
 
 
 const Home = () => {
@@ -39,11 +40,11 @@ const Home = () => {
         username: "",
         pwd: ""
     })
+
     const [loginData, setLogiInData] = useState({
         username: "",
         pwd: ""
     })
-
 
     useGSAP(() => {
         gsap.fromTo(
@@ -80,7 +81,7 @@ const Home = () => {
     const handleDataSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:3001/register", inputData, {
+            const response = await axios.post(`${frontendURL}/register`, inputData, {
                 headers: {"Content-Type": "application/json"}
             });
     
@@ -112,7 +113,7 @@ const Home = () => {
     const handleLoginSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post("http://localhost:3001/login", loginData, {
+            const response = await axios.post(`${frontendURL}/login`, loginData, {
                 headers: {"Content-Type": "application/json"}
             }) 
 
@@ -149,15 +150,15 @@ const Home = () => {
 
     
 
-    useEffect(() => {
-        const logo = document.querySelectorAll(`.${homestyle.logo} path`);
-        const logoArray = Array.from(logo);
+    // useEffect(() => {
+    //     const logo = document.querySelectorAll(`.${homestyle.logo} path`);
+    //     const logoArray = Array.from(logo);
 
-        for(let i = 0; i < logoArray.length; i++){
-            console.log(`Letter ${i} is ${logo[i].getTotalLength()}`)
-        }
+    //     for(let i = 0; i < logoArray.length; i++){
+    //         console.log(`Letter ${i} is ${logo[i].getTotalLength()}`)
+    //     }
 
-    }, [homestyle.logo]);
+    // }, [homestyle.logo]);
     
 
 

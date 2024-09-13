@@ -2,11 +2,11 @@ import inroomstyle from "../styles/inroomstyle.module.css"
 import socket from "../socket"
 import { useEffect, useRef, useState } from "react"
 
-
-
 import { useAuth } from "./AuthContex"
 import Cookies from "js-cookie"
 import axios from "axios"
+
+const frontendURL = import.meta.env.VITE_REACT_APP_FRONTEND_URL
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faUserPlus, faXmark } from "@fortawesome/free-solid-svg-icons"
@@ -31,7 +31,7 @@ const InRoom = ({name, room}) => {
             if (!user) return;
             try {
                 const token = Cookies.get("token");
-                const response = await axios.get("http://localhost:3001/getappuser", {
+                const response = await axios.get(`${frontendURL}/getappuser`, {
                     headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` }
                 });
                 if (response.data.valid) {
@@ -47,7 +47,7 @@ const InRoom = ({name, room}) => {
     useEffect(() => {
         const fetchAllRegisterMembers = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/getActiveUsers");
+                const response = await axios.get(`${frontendURL}/getActiveUsers`);
                 setAllRegisterMember(response.data);
             } catch (error) {
                 console.log("Error fetching data", error);
@@ -125,7 +125,7 @@ const InRoom = ({name, room}) => {
                             {usersToInvite.map((elem, id) => (
                                 <div key={id} className={inroomstyle.inviteItem}>
                                     {elem.profilePic ? (
-                                        <img src={`http://localhost:3001/profilePics/${elem.profilePic}`} alt={`Profile of ${elem.username.charAt(0).toUpperCase()}`} />
+                                        <img src={`${frontendURL}/profilePics/${elem.profilePic}`} alt={`Profile of ${elem.username.charAt(0).toUpperCase()}`} />
                                     ) : (
                                         <div className={inroomstyle.noProfilePic}>
                                             <div className={inroomstyle.noUserNameWrapper}>
