@@ -1,0 +1,151 @@
+.mainContainer{
+    background-color: rgba(5, 74, 145, 0.5);
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    margin-top: 1rem;
+}
+.mainContainer:hover{
+    overflow: auto;
+}
+
+.mainContainer:hover{
+    overflow: auto;
+}
+
+.mainContainer h3{
+    color: white;
+    border-bottom: 2px solid rgba(5, 74, 145);
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer div{
+    padding: .5rem ;
+}
+
+.roomListWrapper{
+    position: relative;
+    overflow: hidden;
+}
+
+.roomListWrapper ul li{
+    list-style:none;
+    cursor: pointer;
+    padding: .2rem;
+    color: #b5e48c;
+    display: flex;
+    border: .5px solid black;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: .5rem 0 0 0;
+}
+
+.roomListWrapper ul li span{
+    margin-left: 4rem;
+    border-radius: 50%;
+    border: none;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(2, 24, 46, 0.5); ;
+}
+
+.roomListWrapper ul li:hover{
+    background-color: #184e77;
+    border-radius: 5px;
+}
+
+.joinModalWrapper{
+    width: 20%;
+    border: none;
+    background-color:#b5e48c;
+    position: absolute;
+    left: 18rem;
+    top: 15rem;
+    border-radius: 10px;
+    padding: 1rem;
+    animation: showModal 2s ease-in-out forwards;
+}
+
+@keyframes showModal {
+    0%{ opacity: 0;}
+    100%{ opacity: 1;}
+}
+
+.joinModalWrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.joinModalWrapper div{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.joinModalWrapper div input{
+    height: 2rem;
+    padding-left: .2rem;
+}
+
+.bttn{
+    width: 40%;
+    height: 2rem;
+    background-color: #2d8d91;
+    color: black;
+    border-left: 3px solid rgba(1, 7, 14, 0.5);
+    border-right: 3px solid rgba(1, 7, 14, 0.5); 
+    border-top: none;
+    border-bottom: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all ease-in-out 500ms;
+}
+
+.bttn:hover{
+    width: 40%;
+    height: 2rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    background-color: rgba(3, 39, 75, 0.5);
+    color: white;
+}
+
+.xmarkIcon{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    color: white;
+    background-color: black;
+    padding: .2rem;
+    position: absolute;
+    right: 0rem;
+    top: 0;
+    cursor: pointer;
+}
+
+.xmarkIcon:hover{
+    background-color: white;
+    color: red;
+}
+
+.joinModalWrapper div label{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}

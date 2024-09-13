@@ -1,0 +1,411 @@
+.mainContainer{
+    background-image: url(/blueimage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mainWrapper{
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 65%;
+    height: 70%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.logo {
+    position: absolute;
+    margin: auto;
+    animation: fill 0.5s ease 3s forwards, hideLogo 2s ease 3s forwards; /* Hide the logo after fill animation */
+}
+
+.logo path {
+    stroke: #7ae582;
+}
+
+.logo path:nth-child(1) {
+    stroke-dasharray: 326;
+    stroke-dashoffset: 326;
+    animation: lineAnim 2s ease 2.4s forwards;
+}
+.logo path:nth-child(2) {
+    stroke-dasharray: 497;
+    stroke-dashoffset: 497;
+    animation: lineAnim 2s ease 2.1s forwards;
+}
+.logo path:nth-child(3) {
+    stroke-dasharray: 485;
+    stroke-dashoffset: 485;
+    animation: lineAnim 2s ease 1.8s forwards;
+}
+.logo path:nth-child(4) {
+    stroke-dasharray: 521;
+    stroke-dashoffset: 521;
+    animation: lineAnim 2s ease 1.5s forwards;
+}
+.logo path:nth-child(5) {
+    stroke-dasharray: 430;
+    stroke-dashoffset: 430;
+    animation: lineAnim 2s ease 1.2s forwards;
+}
+.logo path:nth-child(6) {
+    stroke-dasharray: 105;
+    stroke-dashoffset: 105;
+    animation: lineAnim 2s ease 0.9s forwards;
+}
+.logo path:nth-child(7) {
+    stroke-dasharray: 373;
+    stroke-dashoffset: 373;
+    animation: lineAnim 2s ease 0.6s forwards;
+}
+.logo path:nth-child(8) {
+    stroke-dasharray: 497;
+    stroke-dashoffset: 497;
+    animation: lineAnim 2s ease 0.3s forwards;
+}
+.logo path:nth-child(9) {
+    stroke-dasharray: 794;
+    stroke-dashoffset: 794;
+    animation: lineAnim 2s ease forwards;
+}
+
+@keyframes lineAnim {
+    to{stroke-dashoffset: 0;}
+}
+
+@keyframes fill {
+    from { fill: transparent; }
+    to { fill: #0096c7; }
+}
+
+@keyframes hideLogo {
+    from{opacity: 1;}
+    to { display: none; } /* Hide the logo container */
+}
+
+
+.loginWrapper {
+    background-color: rgba(245, 14, 14, 0.5);
+    width: 60%;
+    position: relative;
+    color: white;
+    opacity: 0;
+    animation: showLoginWrapper 1s ease-in-out 500ms forwards;
+}
+
+@keyframes showLoginWrapper {
+    0% { transform: translateX(1000px); }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.loginWrapper h2{
+    text-align: center;
+    margin-top: 2rem;
+    color: #7ae582;
+}
+.loginInputWrapper{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 4rem;
+    row-gap: 2rem;
+    margin-right: 30%;
+}
+
+.loginWrapper button{
+    width: 7rem;
+    height: 2rem;
+    right: 30%;
+    bottom: 10rem;
+    background-color: #7ae582;
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    transition: all 200ms linear;
+}
+
+.loginWrapper button:hover{
+    border: none;
+    border-radius: 1rem;
+    color: white;
+}
+
+.loginWrapper input{
+    height: 2rem;
+    width: 11rem;
+    padding-left: .2rem;
+}
+
+.hideLoginWrapper {
+    background-color: rgba(245, 14, 14, 0.5);
+    width: 60%;
+    position: relative;
+    color: white;
+    animation: hideLoginWrapper 1s ease-in-out forwards;
+}
+
+@keyframes hideLoginWrapper {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-900px); }
+}
+
+.hideLoginWrapper h2{
+    text-align: center;
+    margin-top: 2rem;
+    color: #7ae582;
+}
+
+.hideLoginWrapper button{
+    width: 7rem;
+    height: 2rem;
+    right: 30%;
+    bottom: 10rem;
+    background-color: #7ae582;
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    transition: all 200ms linear;
+}
+
+.hideLoginWrapper button:hover{
+    border: none;
+    border-radius: 1rem;
+    color: white;
+}
+
+.hideLoginWrapper input{
+    height: 2rem;
+    width: 11rem;
+    padding-left: .2rem;
+}
+
+.singUpWrapper {
+    background-color: rgba(5, 74, 145, 0.5);
+    width: 60%;
+    height: 100%;
+    color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    row-gap: 1rem;
+    opacity: 0;
+    animation: showSignUpWrapper 1s ease-in-out 500ms forwards;
+}
+
+@keyframes showSignUpWrapper {
+    0% { transform: translateX(1000px); }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+
+.errorMessage{
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 5rem;
+    left: 4rem;
+}
+
+.singUpWrapper input,
+.hideSignUpWrapper input{
+    height: 2rem;
+    width: 11rem;
+    padding-left: .2rem;
+    margin-right: 7rem;
+}
+
+.singUpWrapper h2,
+.hideSignUpWrapper h2{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    color:white;
+}
+
+.singUpWrapper button,
+.hideSignUpWrapper button{
+    width: 7rem;
+    height: 2rem;
+    right: 30%;
+    bottom: 1rem;
+    background-color:#4b566f;
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    transition: all 200ms linear;
+}
+
+.singUpWrapper button:hover{
+    border: none;
+    border-radius: 1rem;
+    color: white;
+}
+
+.hideSignUpWrapper{
+    background-color: rgb(5, 74, 145, 0.5);
+    width: 60%;
+    height: 100%;
+    color: white;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    row-gap: 1rem;
+    animation: hideSignUpWrapper 1s ease-in-out forwards;
+}
+@keyframes hideSignUpWrapper {
+    0% { transform: translateX(0);}
+    100% { transform: translateX(-1000px);}
+} 
+
+.logInLinkButton{
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms linear;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 12.5rem;
+    border-radius: .5rem;
+    background-color: #7ae582;
+    animation: showLoginButton 2.5s ease-in-out forwards;
+}
+
+@keyframes showLoginButton {
+    0%{transform: translateX(1000px);}
+    100%{transform: translateX(0);}
+}
+
+.hideLoginLinkButton {
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms linear;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 5rem;
+    bottom: 12.5rem;
+    border-radius: .5rem;
+    background-color: #7ae582;
+    animation: hideLoginButton 1s ease-in-out 400ms forwards;
+}
+
+@keyframes hideLoginButton {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-1000px);}
+}
+
+.logInLinkButton button,
+.hideLoginLinkButton button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    color: black;
+    cursor: pointer;
+}
+
+.logInLinkButton:hover,
+.logInLinkButton button:hover{
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    color: white;
+}
+
+.signUpLinkButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    margin-right: 3rem;
+    opacity: 0;
+    animation: showSignUpButton 2.5s ease-in-out forwards;
+}
+@keyframes showSignUpButton {
+    0%{transform: translateX(1000px)}
+    100%{transform: translateX(0); opacity: 1;}
+}
+
+.signUpLinkButton button:hover{
+    border: none;
+    border-radius: 1rem;
+    color: white;
+}
+
+.signUpLinkButton button{
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms linear;
+    font-size: 1.5rem;
+    background-color: #032064;
+    position: absolute;
+    right: 3rem;
+    top: 12rem;
+    border-radius: .5rem;
+}
+
+.hideSignUpButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-right: 3rem;
+    align-items: center;
+    animation: hideSignUpButton 1s ease-in-out 500ms normal forwards;
+}
+@keyframes hideSignUpButton {
+    0%{transform: translateX(0)}    
+    100%{transform: translateX(-1000px)}
+}
+
+.hideSignUpButton button:hover{
+    border: none;
+    border-radius: 1rem;
+    color: white;
+}
+
+.hideSignUpButton button{
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    transition: all 200ms linear;
+    font-size: 1.5rem;
+    background-color: #032064;
+    position: absolute;
+    right: 3rem;
+    top: 12rem;
+    border-radius: .5rem;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+
+
+
+

@@ -1,0 +1,289 @@
+.mainContainer{
+    background-image: url(/chairimage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    position: relative;
+}
+
+.headerWrapper{
+    position: absolute;
+    top: 2rem;
+    width: max-content;
+    height: 40%;
+    right: 5%;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headerWrapper h1 {
+    color:rgb(0, 150, 199);
+    text-shadow: 
+        2px 2px 0 #7ae582, 
+        -2px -2px 0 #7ae582, 
+        2px -2px 0 #7ae582, 
+        -2px 2px 0 #7ae582; 
+}
+
+
+.headerWrapper button{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    border-left: 3px solid rgba(5, 74, 145, 0.5);
+    border-right: 3px solid rgba(5, 74, 145, 0.5); 
+    background-color: rgba(5, 74, 145, 0.5);
+    color: white;
+    position: relative;
+    font-size: 1.2rem;
+    transition: all ease-in-out 400ms;
+}
+
+
+.headerWrapper button:hover{
+    width: 10rem;
+    height: 3rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    border-left: 3px solid #7ae582;
+    border-right: 3px solid #7ae582;
+    background-color: rgba(3, 39, 75, 0.5);
+    color: #7ae582;
+    font-size: 1.2rem;
+}
+
+.otherRoomWrapper{
+    position: absolute;
+    left: 1rem;
+    top: 5rem;
+    height: 70%;
+    width: 20%;
+}
+
+.joinModalWrapper{
+    width: 20%;
+    border: none;
+    background-color: rgba(5, 74, 145, 0.5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    padding: 1rem;
+    animation: showModal 800ms ease-in-out forwards;
+}
+
+@keyframes showModal {
+    0%{transform: translateY(-2rem); opacity: 0;}
+    100%{transform: translateY(0); opacity: 1;}
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+
+.InputWrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.InputWrapper input{
+    height: 2rem;
+    padding-left: .2rem;
+}
+
+.bttn{
+    width: 40%;
+    height: 2rem;
+    background-color: #2d8d91;
+    color: black;
+    border-left: 3px solid rgba(1, 7, 14, 0.5);
+    border-right: 3px solid rgba(1, 7, 14, 0.5); 
+    border-top: none;
+    border-bottom: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all ease-in-out 500ms;
+}
+
+.bttn:hover{
+    width: 40%;
+    height: 2rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    border-left: 3px solid #7ae582;
+    border-right: 3px solid #7ae582;
+    background-color: rgba(3, 39, 75, 0.5);
+    color: #7ae582;
+}
+
+.xmarkIcon{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1rem;
+    color: white;
+    background-color: black;
+    padding: .2rem;
+    position: absolute;
+    right: 0rem;
+    top: 0;
+    cursor: pointer;
+}
+
+.xmarkIcon:hover{
+    background-color: white;
+    color: red;
+}
+
+
+.usernameWrapper{
+    background-color: rgba(5, 74, 145, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    height: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.usernameWrapper:hover{
+    color: black;
+}
+
+.profilePicImageWrapper{
+    background-color: aliceblue;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilePicImageWrapper img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.logoutAndSettingWrapper{
+    width: 10rem;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: rgba(5, 74, 145, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    z-index: 22;
+    padding: 1.2rem;
+}
+
+.logoutAndSettingWrapper button{
+    width: 4rem;
+    height: 1.5rem;
+    background-color: rgba(1, 24, 46, 0.5);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.logoutAndSettingWrapper button:hover{
+    background-color: darkblue;
+}
+
+.gearIcon{
+    height: 1.5rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.gearIcon:hover{
+    color: darkred;
+}
+
+.bioModal{
+    width: 100%;
+    height:max-content;
+    top: 0;
+    left: 1rem;
+}
+
+.bioModal form{
+    border: 2px solid black;
+    height: 100%;
+    background-color: #2d8d91;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem;
+}
+
+.bioModal form input{
+    width: 15rem;
+    height: 2rem;
+    padding-left: .2rem;
+}
+
+.bioModal form textarea{
+    min-width: 90%;
+    max-width: 90%;
+    max-height: 5rem;
+    min-height: 5rem;
+    margin: auto;
+}
+
+.bioModal form button{
+    width: 7rem;
+    height: 2rem;
+    margin: auto;
+}
+
+.customPicUploadButton{
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    text-align: center; 
+}
+
+.customPicUploadButton input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
