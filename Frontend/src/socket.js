@@ -8,4 +8,7 @@ const socket = io(frontendURL, {
     reconnectionAttempts: 5
 });
 
+console.log(`WebSocket connection attempt to: ${frontendURL}`);
+
+
 export default socket;
