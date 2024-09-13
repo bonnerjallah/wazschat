@@ -22,8 +22,8 @@ const addUser = ({ id, name, room }) => {
     const newUser = { id, name: trimmedName, room: trimmedRoom };
     users.push(newUser);
 
-    console.log(`User added successfully:`, newUser);
-    console.log("Current users:", users);
+    // console.log(`User added successfully:`, newUser);
+    // console.log("Current users:", users);
 
     return { user: newUser};
 }
@@ -69,7 +69,7 @@ const getAllRooms = () => {
         room,
         users
     }));
-    console.log("roomdetails", roomDetails)
+    // console.log("roomdetails", roomDetails)
 
     return roomDetails;
 };

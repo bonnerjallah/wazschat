@@ -47,9 +47,6 @@ const updateUserData =  async (req, res) => {
             // Assign new profile picture to the user
             user.profilePic = profilePic;
         }
-        
-        
-        console.log("user", user)
 
         await user.save()
 
