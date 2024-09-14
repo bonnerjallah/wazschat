@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) => {
             }
 
             const response = await axios.post(`${frontendURL}/refresh_token`, {}, {
-                headers:{"Content-Type": "application/json"}
+                headers:{"Content-Type": "application/json", "Authorization": `Bearer ${storedToken}`}
             })
             
             if(response.status === 200) {
