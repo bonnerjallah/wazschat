@@ -71,7 +71,7 @@ const login = async (req, res) => {
                 const accessToken = jwt.sign({user: userData}, jwtSec, {expiresIn: "5min"})
                 const refresh_token = jwt.sign({user: userData}, refToken, {expiresIn: "1hr"})
 
-                res.cookie("token", accessToken, { httpOnly: true, sameSite: "Lax", secure: process.env.NODE_ENV === "production" });
+                res.cookie("token", accessToken, { httpOnly: true, sameSite: "None", secure: process.env.NODE_ENV === "production" });
                 res.cookie("refreshToken", refresh_token, { httpOnly: true });
 
                 return res.status(200).json({
@@ -110,28 +110,34 @@ const validateAccessToken = (req, res, next) => {
     })
 }
 
-//Refresh Token route
+// Refresh Token route
 const refreshToken = (req, res) => {
-    const refreshToken = req.cookies.refreshToken
+    const refreshToken = req.cookies.refreshToken;
 
-    if(!refreshToken) {
-        return res.status(401).json({error: "refresh token is missing"})
+    if (!refreshToken) {
+        return res.status(401).json({ error: "refresh token is missing" });
     }
 
     jwt.verify(refreshToken, refToken, (err, decoded) => {
-        if(err) {
-            return res.status(401).json({error: "Invalid or expired refresh token"})
+        if (err) {
+            return res.status(401).json({ error: "Invalid or expired refresh token" });
         }
 
-        const userData = decoded.user
+        const userData = decoded.user;
 
-        const newAccessToken = jwt.sign({user: userData}, jwtSec, {expiresIn: "5min"})
+        const newAccessToken = jwt.sign({ user: userData }, jwtSec, { expiresIn: "5min" });
 
-        res.cookie("token", newAccessToken, { httpOnly: true });
-        res.status(200).json({message: "Token refresh successfully"})
+        // Set the new access token cookie with proper security settings
+        res.cookie("token", newAccessToken, {
+            httpOnly: true,
+            sameSite: "None",
+            secure: process.env.NODE_ENV === "production" // Set to true in production (HTTPS)
+        });
 
-    })
-}
+        res.status(200).json({ message: "Token refresh successfully" });
+    });
+};
+
 
 const getAppusers = (req, res) => {
     try {
