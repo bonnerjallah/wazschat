@@ -1,9 +1,5 @@
 const AppUsers = require("../model/appusermodel")
 
-app.get("/", (req, res) => {
-    res.send("Welcome to the Wazschat Backend");
-});
-
 
 const getActiveUsers = async (req, res) => {
     try {
