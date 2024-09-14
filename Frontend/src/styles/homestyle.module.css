@@ -399,13 +399,99 @@
     border-radius: .5rem;
 }
 
-label{
+/* label{
     display: flex;
     align-items: center;
     column-gap: .5rem;
+} */
+
+@media (max-width:1190px) {
+    .loginWrapper{
+        padding-left: 10rem;
+    }
+}
+
+@media(max-width: 1019px){
+    .signUpLinkButton button{
+        position: absolute;
+        right: -5px;
+    }
+}
+
+@media(max-width: 960px){
+    .singUpWrapper label{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logInLinkButton{
+        margin-left: 30rem;
+    }
+    .logInLinkButton button{
+        margin-bottom: 80%;
+    }
+}
+
+@media(max-width: 800px){
+    .signUpLinkButton button{
+        margin-left: 7rem;
+        width: 7rem;
+    }
+    .loginWrapper{
+        padding-left: 15rem;
+    }
+
+    .loginWrapper h2{
+        margin-left: -10rem;
+        width: 7rem;
+    }
+
+    svg{
+        width: 500px;
+    }
+}
+
+@media(max-width: 770px){
+    .singUpWrapper {
+        padding-left: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 40%;
+    }
+
+    .singUpWrapper h2{
+        width: max-content;
+        margin-left: -70rem;
+    }
+
+    .logInLinkButton{
+        width: 5rem;
+        font-size: 1rem;
+    }
 }
 
 
+
+@media (max-width: 685px) {
+        .loginInputWrapper {
+        padding-right: 5rem;
+    }
+    .loginInputWrapper label{
+        padding-right: 2rem;
+    }
+    input {
+        margin-left: -1rem;
+    }
+}
+
+@media(max-width: 610px){
+    .signUpLinkButton button{
+        margin-right: -2rem;
+        width: 4rem;
+        font-size: 1rem;
+    }
+}
 
 
 
