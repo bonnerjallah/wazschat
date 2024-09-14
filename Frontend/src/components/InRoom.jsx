@@ -86,14 +86,14 @@ const InRoom = ({name, room}) => {
 
     useEffect(() => {
         const handleRoomMember = (newMembers) => {
-            console.log("Received allUsers event:", newMembers);
+            // console.log("Received allUsers event:", newMembers);
             if (newMembers) {
                 setRoomMembers(newMembers);
             }
         };
     
         const handleCurrentUsers = (curUsers) => {
-            console.log("Received currentusers event:", curUsers);
+            // console.log("Received currentusers event:", curUsers);
             if (curUsers) {
                 setAllOnlineUsers(curUsers);
             }

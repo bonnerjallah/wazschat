@@ -55,7 +55,7 @@ const Chat = () => {
                 }
             });
 
-            console.log("Socket connected:", socket.connected);
+            // console.log("Socket connected:", socket.connected);
 
             socket.emit("join", { name, room }, (error) => {
                 if (error) {

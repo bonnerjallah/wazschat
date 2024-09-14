@@ -48,7 +48,6 @@ const Join = () => {
                 const response = await axios.get(`${frontendURL}/getappuser`, {
                     headers: {"Content-Type": "application/json", "Authorization": `Bearer ${token}`}
                 })
-                console.log(response.data)
 
                 if(response.data.valid){
                     setUserData(response.data)
@@ -62,8 +61,6 @@ const Join = () => {
 
         fetchUserData()
     }, [user])   
-
-    console.log(userData)
 
     useEffect(() => {
         const initializeSocket = async () => {

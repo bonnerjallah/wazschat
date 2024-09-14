@@ -117,7 +117,7 @@ const Home = () => {
                 headers: {"Content-Type": "application/json"}
             }) 
 
-            console.log("Response data", response.data.message)
+            // console.log("Response data", response.data.message)
 
             if(response.status === 200) {
 

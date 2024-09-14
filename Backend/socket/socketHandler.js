@@ -2,7 +2,7 @@ const { addUser, removeUser, getUser, getUserInRoom, getAllRooms, getCurrentUser
 
 function socketHandler(io) {
     io.on("connection", (socket) => {
-        console.log("New client connected with ID:", socket.id);
+        // console.log("New client connected with ID:", socket.id);
 
         
         //Emit all rooms
@@ -31,7 +31,7 @@ function socketHandler(io) {
 
         
         socket.on("join", ({ name, room }, callback) => {
-            console.log(`User ${name} attempting to join room ${room}`);
+            // console.log(`User ${name} attempting to join room ${room}`);
 
             // Add user and handle any errors
             const { user, error } = addUser({ id: socket.id, name, room });

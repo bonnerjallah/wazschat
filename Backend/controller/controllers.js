@@ -47,7 +47,6 @@ const register = async (req, res) => {
 }
 
 const login = async (req, res) => {
-    console.log("recieved data for login", req.body)
     try {
         const {username, pwd} = req.body
 
@@ -72,7 +71,7 @@ const login = async (req, res) => {
                 const refresh_token = jwt.sign({user: userData}, refToken, {expiresIn: "1hr"})
 
                 res.cookie("token", accessToken, { httpOnly: true, sameSite: "None", secure: process.env.NODE_ENV === "production" });
-                res.cookie("refreshToken", refresh_token, { httpOnly: true });
+                res.cookie("refreshToken", refresh_token, { httpOnly: true, sameSite: "None", secure: process.env.NODE_ENV === "production" });
 
                 return res.status(200).json({
                     message: "Login Successfully",
