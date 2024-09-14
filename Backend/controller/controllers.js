@@ -120,6 +120,7 @@ const refreshToken = (req, res) => {
 
     jwt.verify(refreshToken, refToken, (err, decoded) => {
         if (err) {
+            console.log("Refresh token error:", err);
             return res.status(401).json({ error: "Invalid or expired refresh token" });
         }
 
