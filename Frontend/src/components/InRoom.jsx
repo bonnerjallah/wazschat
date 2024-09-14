@@ -153,7 +153,7 @@ const InRoom = ({name, room}) => {
                             <div key={index} className={inroomstyle.activeUserInfoWrapper}>
                                 <div className={inroomstyle.userImageWrapper}>
                                     {membElem.profilePic ? (
-                                        <img src={`http://localhost:3001/profilePics/${membElem.profilePic}`} alt={`${membElem.username.charAt(0).toUpperCase()}`} />
+                                        <img src={`${frontendURL}/profilePics/${membElem.profilePic}`} alt={`${membElem.username.charAt(0).toUpperCase()}`} />
                                     ) : (
                                         <div className={inroomstyle.noUserNameWrapper}>
                                             {membElem.username.charAt(0).toUpperCase()}

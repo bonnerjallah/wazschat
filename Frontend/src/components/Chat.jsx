@@ -32,10 +32,8 @@ const Chat = () => {
         setRoom(room);
 
         const handleWelcomeMessage = (message) => {
-            console.log(message)
 
             const userName = message.user.name.charAt(0).toUpperCase() + message.user.name.slice(1)
-            console.log(userName)
             message.user.name = userName
             setWelcomeMessage(message)
         };
