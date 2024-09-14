@@ -3,6 +3,9 @@ import axios from "axios"
 
 const AuthContext = createContext()
 
+const frontendURL = import.meta.env.VITE_REACT_APP_FRONTEND_URL
+
+
 export const AuthProvider = ({children}) => {
 
     const [loggedIn, setLoggedIn] = useState(false)
@@ -18,7 +21,7 @@ export const AuthProvider = ({children}) => {
                 return
             }
 
-            const response = await axios.post("http://localhost:3001/refresh_token", {}, {
+            const response = await axios.post(`${frontendURL}/refresh_token`, {}, {
                 headers:{"Content-Type": "application/json"}
             })
             
